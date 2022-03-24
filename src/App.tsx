@@ -6,14 +6,16 @@ import HomeConsumption from './components/HomeConsumption';
 function App() {
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} md={6}>
-        <GeneratorConsumption />
+    <div>
+      <Grid container spacing={5} maxWidth={'100%'} style={{marginLeft: 'auto'}}>
+        {/* <Grid item xs={12} md={6}>
+          <GeneratorConsumption />
+        </Grid> */}
+        <Grid item xs={12}>
+          <HomeConsumption />
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={6}>
-        <HomeConsumption />
-      </Grid>
-    </Grid>
+    </div>
   );
 }
 

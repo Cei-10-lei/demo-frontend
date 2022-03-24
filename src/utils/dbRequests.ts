@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { DbConsumption } from "../models/db";
 
 const API_URL = "http://localhost:8081/consumption/"
 

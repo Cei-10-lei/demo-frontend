@@ -12,11 +12,13 @@ export const PROVIDED_ELECTRICITY = 2;
 export interface DbConsumption {
     _id: string,
     type: number,
-    consumption: number,
+    homeConsumption: number,
+    generatorConsumption: number,
     time: string
 }
 
 export interface Summary {
-    totalConsumption: number,
+    totalHouseConsumption: number,
+    totalGeneratorConsumption: number,
     dateInterval: Array<Date>,
 }

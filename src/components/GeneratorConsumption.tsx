@@ -20,17 +20,17 @@ const GeneratorConsumption = () => {
 
     useEffect(() => {
         if (dbData) {
-            setData(filterDataByType(1, dbData));
-            setSummary(getSummary(1, dbData));
+            setData(filterDataByType(dbData, 2));
+            setSummary(getSummary(dbData));
         }
     }, [dbData]);
 
-    console.log(summary);
+    console.log(data);
 
     return (
         <div>
             <p>Intervalul de timp masurat: {summary ? summary.dateInterval[0].toString().substring(0, 25) : null} - {summary ? summary.dateInterval[1].toString().substring(0, 25) : null}</p>
-            <p>Consum total: {summary ? summary.totalConsumption/1000 : null} kWh</p>
+            <p>Consum total: {summary ? summary.totalGeneratorConsumption/1000 : null} kWh</p>
             <AreaChart
                 width={500}
                 height={400}
@@ -46,7 +46,7 @@ const GeneratorConsumption = () => {
                 <XAxis dataKey="time" />
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="consumption" stroke="#8884d8" fill="#8884d8" />
+                <Area type="monotone" dataKey="generatorConsumption" stroke="#8884d8" fill="#74e893" />
             </AreaChart>
         </div>
     )
